@@ -66,12 +66,12 @@ export default function ContactPage() {
           
           {/* Column A: Direct Credentials & Contacts */}
           <div className="lg:col-span-5 space-y-8">
-            <div className="space-y-3">
+            {/* <div className="space-y-3">
               <h2 className="text-2xl font-black text-white uppercase tracking-tight">Direct Connections</h2>
               <p className="text-sm text-slate-400 leading-relaxed">
                 Skip the lines. Reach out directly to speak with project management regarding material variables, scheduling queues, or corporate documents.
               </p>
-            </div>
+            </div> */}
 
             {/* Structured Contact Stack */}
             <div className="space-y-4">
@@ -154,7 +154,7 @@ export default function ContactPage() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
                 <div className="space-y-1">
-                  <h3 className="text-xl font-bold text-white tracking-tight">Scope Blueprint Intake</h3>
+                  <h3 className="text-xl font-bold text-white tracking-tight">Get in Touch</h3>
                   <p className="text-xs text-slate-500">Provide approximate property metrics to streamline scheduling processes.</p>
                 </div>
 
@@ -239,7 +239,7 @@ export default function ContactPage() {
                   type="submit"
                   className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-amber-500 text-slate-950 font-extrabold text-sm uppercase tracking-wider rounded-xl transition-transform hover:scale-[1.01] active:scale-[0.99] shadow-lg shadow-amber-500/10"
                 >
-                  <Send className="w-4 h-4 fill-current" /> Dispatch Request Framework
+                  <Send className="w-4 h-4 fill-current" /> Send Message for Free Quote
                 </button>
               </form>
             )}

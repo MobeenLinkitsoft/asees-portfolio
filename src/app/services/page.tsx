@@ -271,7 +271,7 @@ export default function ServicesPage() {
       </section>
 
       {/* NEW SECTION 6: LOCAL VIOLATIONS & COMPLIANCE GRID */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-900">
+      {/* <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-900">
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
           <span className="text-xs font-bold text-amber-500 uppercase tracking-widest font-mono">City Code Adherence</span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Violations Resolved & Remedied</h2>
@@ -291,7 +291,7 @@ export default function ServicesPage() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* SECTION 7: CONVERSION ENDING CAPSTONE */}
       <section className="py-20 px-4 text-center bg-gradient-to-t from-slate-900 to-transparent border-t border-slate-900/40">
