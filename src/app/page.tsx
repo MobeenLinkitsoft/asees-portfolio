@@ -16,7 +16,8 @@ import {
   ChevronDown, 
   HelpCircle,
   Sparkles,
-  Layers
+  Layers,
+  Image as ImageIcon
 } from 'lucide-react';
 
 export default function HomePage() {
@@ -130,63 +131,57 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-amber-500 selection:text-slate-950">
       
-      {/* SECTION 1: HERO & BUSINESS BRANDING SHOWCASE */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 border-b border-slate-900 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      {/* SECTION 1: HERO BACKGROUND OPTIC OVERLAY (TEXT CENTERED) */}
+      <section className="relative py-32 px-4 sm:px-6 lg:px-8 border-b border-slate-900 bg-slate-950 overflow-hidden min-h-[85vh] flex items-center justify-center">
+        {/* Immersive background texture image with deep black opacity filter overlay */}
+        
+        <div className="absolute inset-0 z-0">
+          <Image 
+            src="/showcase/bgimg.jpg" // Swap this path with your specific background construction image as desired
+            alt="ASEES Structural Heavy Construction Framework Background Background"
+            fill
+            priority
+            className="object-cover object-center grayscale opacity-95"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/80 to-slate-950 pointer-events-none" />
+        </div>
+
+        <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10">
+          <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-400 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mx-auto">
+            <ShieldCheck className="w-4 h-4" /> Fully Licensed & Insured Contractor
+          </div>
           
-          <div className="lg:col-span-5 space-y-6">
-            <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-400 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
-              <ShieldCheck className="w-4 h-4" /> Fully Licensed & Insured
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-none uppercase">
+            ASEES <br className="sm:hidden" />
+            <span className="text-amber-500">GENERAL CONSTRUCTION</span> CORP
+          </h1>
+          
+          <p className="text-base sm:text-xl text-slate-400 font-medium max-w-2xl mx-auto leading-relaxed">
+            Quality work built to last. Specializing in premier masonry restorations, parapet wall builds, structural brick grinding, and custom concrete flatwork across New York.
+          </p>
+          
+          {/* Main Direct Quick Contact Grid Bar */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 max-w-3xl mx-auto text-left font-mono text-xs text-slate-300 border-t border-slate-900/80 mt-6">
+            <div className="flex items-center gap-3 bg-slate-900/30 p-3 rounded-xl border border-slate-900">
+              <Phone className="w-4 h-4 text-amber-500 shrink-0" />
+              <div>
+                <p className="font-bold text-white">929-278-9239</p>
+                <p className="text-[12px] text-slate-500 font-sans">Ricky (Estimates)</p>
+              </div>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-white leading-none">
-              ASEES <span className="text-amber-500">GENERAL CONSTRUCTION</span> CORP
-            </h1>
-            <p className="text-lg text-slate-400 font-medium">
-              Quality work built to last. Specializing in premier masonry restorations, parapet wall builds, structural brick grinding, and custom concrete flatwork across New York.
-            </p>
-            
-            <div className="pt-4 space-y-3 text-sm text-slate-300">
-              <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-amber-500 shrink-0" />
-                <div>
-                  <p className="font-semibold text-white">929-278-9239 <span className="text-slate-500 font-normal">(Ricky)</span></p>
-                  <p className="text-xs text-slate-500">Office: 347-509-6977</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-amber-500 shrink-0" />
-                <span className="font-mono text-xs sm:text-sm">aseesconstruction00@gmail.com</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <MapPin className="w-5 h-5 text-amber-500 shrink-0" />
-                <span>Queens, New York City</span>
-              </div>
+            <div className="flex items-center gap-3 bg-slate-900/30 p-3 rounded-xl border border-slate-900">
+              <Mail className="w-4 h-4 text-amber-500 shrink-0" />
+              <span className="truncate text-[12px]">aseesconstruction00@gmail.com</span>
+            </div>
+            <div className="flex items-center gap-3 bg-slate-900/30 p-3 rounded-xl border border-slate-900">
+              <MapPin className="w-4 h-4 text-amber-500 shrink-0" />
+              <span>Queens, New York City</span>
             </div>
           </div>
-
-          <div className="lg:col-span-7">
-            <div className="group relative rounded-3xl overflow-hidden shadow-2xl border border-slate-800 bg-slate-900/50 p-2 backdrop-blur transition-all duration-300 hover:border-amber-500/30 hover:shadow-amber-500/5">
-              <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-              <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden bg-slate-950">
-                <Image 
-                  src="/showcase/businesscard2.jpeg"
-                  alt="ASEES General Construction Corp Business Showcase Card Banner"
-                  fill
-                  priority
-                  className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-                  sizes="(max-w-1200px) 100vw, 800px"
-                />
-              </div>
-            </div>
-            <p className="mt-3 text-center text-xs text-slate-500 font-mono tracking-wide">
-              Official Digital Credentials Asset • Free Estimates Offered Locally
-            </p>
-          </div>
-
         </div>
       </section>
 
-      {/* NEW SECTION 2: INFORMATIVE VALUES BLOCK */}
+      {/* SECTION 2: INFORMATIVE VALUES BLOCK */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-slate-900">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, idx) => (
@@ -204,7 +199,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 3: LIVE FIELD PROJECTS CAROUSEL */}
+      {/* NEW SECTION 3: WIDE HORIZONTAL BANNER BLOCK (banner3.png) */}
+      <section className="w-full border-b border-slate-900 bg-slate-950 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative w-full aspect-[21/9] sm:aspect-[32/10] rounded-3xl overflow-hidden border border-slate-900 shadow-xl bg-slate-900 group">
+            <Image 
+              src="/banner3.png" 
+              alt="ASEES Structural Rigging and Site Fleet Banner Overview"
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-[1.01]"
+              sizes="(max-w-1280px) 100vw, 1280px"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-950/30 via-transparent to-slate-950/30 pointer-events-none" />
+          </div>
+          <div className="flex items-center justify-between mt-3 px-2 font-mono text-[10px] tracking-wider text-slate-500 uppercase">
+            <span>Asset Catalog Ref: banner3.png</span>
+            <span className="flex items-center gap-1"><ImageIcon className="w-3 h-3" /> Production Grade Layout</span>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 4: LIVE FIELD PROJECTS CAROUSEL */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
@@ -269,7 +284,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* NEW SECTION 4: CORE SERVICES ACCORDION GRID */}
+      {/* SECTION 5: CORE SERVICES ACCORDION GRID */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-900 mt-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
@@ -300,7 +315,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 5: ALTERNATE PROMOTIONAL GRID DESIGN */}
+      {/* SECTION 6: ALTERNATE PROMOTIONAL GRID DESIGN */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-900">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-slate-900/20 p-6 sm:p-10 rounded-3xl border border-slate-900">
           <div className="space-y-4">
@@ -323,7 +338,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* NEW SECTION 6: INTERACTIVE QA ACCORDION */}
+      {/* SECTION 7: INTERACTIVE QA ACCORDION */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto border-t border-slate-900">
         <div className="text-center mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 text-xs font-bold text-amber-500 uppercase tracking-widest bg-amber-500/5 px-2.5 py-1 rounded border border-amber-500/10">
@@ -370,7 +385,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* NEW SECTION 7: CONVERSION ENDING CTA CAPSTONE */}
+      {/* SECTION 8: CONVERSION ENDING CTA CAPSTONE */}
       <section className="py-16 px-4 text-center bg-gradient-to-t from-slate-900 to-transparent border-t border-slate-900/40">
         <div className="max-w-2xl mx-auto space-y-6">
           <Sparkles className="w-8 h-8 text-amber-500 mx-auto" />
