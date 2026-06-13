@@ -15,61 +15,91 @@ import {
 } from 'lucide-react';
 
 export default function PortfolioPage() {
-  // All active showcase assets mapped cleanly
+  // Freshly integrated image assets mapped to precise categories
   const portfolioItems = [
     {
-      src: '/showcase/brick2.jpeg',
-      title: 'Precision Brick Parapet Wall',
-      category: 'Masonry Restoration',
+      src: '/showcase/Stairs1.jpeg',
+      title: 'Premium Stone Tread Staircase Build',
+      category: 'Concrete Flatwork',
       location: 'Queens, NY',
-      scope: 'Mortar extraction, flashing alignment, and structural code compliance adjustments.',
+      scope: 'Structural masonry steps featuring premium polished stone treads and custom brick veneer risers.',
     },
     {
-      src: '/showcase/floor1.jpeg',
-      title: 'Flawless Sidewalk Finish & Expansion Joints',
-      category: 'Concrete Work',
+      src: '/showcase/Stairs2.jpeg',
+      title: 'Structural Stoop Foundation Alignment',
+      category: 'Parapet Walls & Lintels',
+      location: 'Queens, NY',
+      scope: 'Complete structural rebuild of front entryway foundation and load-bearing perimeter walls.',
+    },
+    {
+      src: '/showcase/Flor1.jpeg',
+      title: 'Multi-Panel Concrete Slab Construction',
+      category: 'Concrete Flatwork',
       location: 'Brooklyn, NY',
-      scope: 'Pitch calibration for water runoff and tool-cut joints to prevent seasonal cracking.',
+      scope: 'Freshly poured continuous concrete flatwork with precision tool-cut expansion joints for seasonal shifting.',
     },
     {
-      src: '/showcase/floor2.jpeg',
-      title: 'On-Site Quality Inspection & Safety Compliance',
-      category: 'Project Management',
-      location: 'Queens, NY',
-      scope: 'Rigid scaffolding checks and OSHA hazard parameter management frameworks.',
-    },
-    {
-      src: '/showcase/floor3.jpeg',
-      title: 'Premium Finished Backyard Concrete Patio',
-      category: 'Concrete Work',
-      location: 'Long Island, NY',
-      scope: 'High-density aggregate base configuration with polished smooth border framing.',
-    },
-    {
-      src: '/showcase/brick5.jpeg',
-      title: 'Commercial Grade Driveway Under Construction',
-      category: 'Concrete Work',
+      src: '/showcase/wooden1.jpeg',
+      title: 'Structural Enclosure & Weatherproofing',
+      category: 'Waterproofing & Restoration',
       location: 'Bronx, NY',
-      scope: 'Subgrade soil compaction and structural grid rebar placement layers.',
+      scope: 'Plywood sheathing and protective moisture barrier application for front facade structural extensions.',
     },
     {
-      src: '/showcase/brick3.jpeg',
-      title: 'Structural Parapet Boundary Alignment',
-      category: 'Masonry',
+      src: '/showcase/Stairs3.jpeg',
+      title: 'Custom Brick Pillars & Concrete Walkway',
+      category: 'Concrete Flatwork',
+      location: 'Long Island, NY',
+      scope: 'Finished structural boundary setup with freshly poured smooth concrete walkway and capped brick pillars.',
+    },
+    {
+      src: '/showcase/Stairs4.jpeg',
+      title: 'Boundary Wall & Step Integration',
+      category: 'Concrete Flatwork',
+      location: 'Long Island, NY',
+      scope: 'Seamless architectural integration of custom stone-capped masonry pillars and graded concrete paving.',
+    },
+    {
+      src: '/showcase/Stairs15.jpeg',
+      title: 'Complete Facade Brick Restoration',
+      category: 'Brick Grinding & Pointing',
       location: 'Queens, NY',
-      scope: 'Complete alignment rectification of bowing historic property border walls.',
+      scope: 'Extensive architectural facade rebuild featuring integrated stone steps and weather-sealed deep pointing.',
     },
     {
-      src: '/showcase/brick4.jpeg',
-      title: 'Active Scaffolding Masonry Operations',
-      category: 'Structural Repairs',
+      src: '/showcase/block.jpeg',
+      title: 'Cinder Block Wall Reinforcement',
+      category: 'Parapet Walls & Lintels',
+      location: 'Brooklyn, NY',
+      scope: 'Active mortar application and structural cinder block reinforcement within a load-bearing envelope opening.',
+    },
+    {
+      src: '/showcase/miniblock.jpeg',
+      title: 'Seamless Brick Patching & Pointing',
+      category: 'Brick Grinding & Pointing',
       location: 'Manhattan, NY',
-      scope: 'Deep grinding extraction on historical envelope layers before repointing.',
+      scope: 'Targeted mortar extraction and precision brick replacement to restore full facade integrity.',
+    },
+    {
+      src: '/showcase/masonry.jpeg',
+      title: 'Architectural Baluster Restoration',
+      category: 'Painting & Restoration',
+      location: 'Queens, NY',
+      scope: 'Installation and structural restoration of decorative architectural stone balusters and railing components.',
     },
   ];
 
-  // Unique categories for filtering logic
-  const categories = ['All', 'Masonry', 'Concrete Work', 'Structural Repairs', 'Project Management'];
+  // Updated categories for filtering logic
+  const categories = [
+    'All', 
+    'Parapet Walls & Lintels', 
+    'Brick Grinding & Pointing', 
+    'Concrete Flatwork', 
+    'Waterproofing & Restoration', 
+    'Roofing', 
+    'Painting & Restoration'
+  ];
+  
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   // Filter items matching state
@@ -97,24 +127,26 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* SECTION 2: INTERACTIVE FILTER NAVIGATION CONTROLLER */}
-      <section className="py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto sticky top-0 z-40 bg-slate-950/80 backdrop-blur-md border-b border-slate-900/60">
-        <div className="flex items-center justify-start lg:justify-center gap-2 overflow-x-auto pb-3 pt-1 scrollbar-none mask-image">
+      {/* SECTION 2: INTERACTIVE FILTER NAVIGATION CONTROLLER (FIXED VISIBILITY) */}
+      <section className="py-8 px-4 sm:px-6 lg:px-8 w-full sticky top-0 z-40 bg-slate-950/90 backdrop-blur-md border-b border-slate-900/60 shadow-lg">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-2 sm:gap-3">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 rounded-xl text-xs font-bold tracking-wider uppercase transition-all shrink-0 border whitespace-nowrap ${
+              className={`px-4 py-2 rounded-xl text-xs font-bold tracking-wider uppercase transition-all border ${
                 selectedCategory === category
                   ? 'bg-amber-500 text-slate-950 border-amber-500 shadow-lg shadow-amber-500/10'
                   : 'bg-slate-900/40 text-slate-400 border-slate-900 hover:text-white hover:border-slate-800'
               }`}
             >
               {category === 'All' && <Grid className="w-3.5 h-3.5 inline mr-1.5 -mt-0.5" />}
-              {category === 'Masonry' && <Hammer className="w-3.5 h-3.5 inline mr-1.5 -mt-0.5" />}
-              {category === 'Concrete Work' && <Construction className="w-3.5 h-3.5 inline mr-1.5 -mt-0.5" />}
-              {category === 'Structural Repairs' && <Layers className="w-3.5 h-3.5 inline mr-1.5 -mt-0.5" />}
-              {category === 'Project Management' && <ShieldCheck className="w-3.5 h-3.5 inline mr-1.5 -mt-0.5" />}
+              {category === 'Parapet Walls & Lintels' && <Hammer className="w-3.5 h-3.5 inline mr-1.5 -mt-0.5" />}
+              {category === 'Brick Grinding & Pointing' && <Layers className="w-3.5 h-3.5 inline mr-1.5 -mt-0.5" />}
+              {category === 'Concrete Flatwork' && <Construction className="w-3.5 h-3.5 inline mr-1.5 -mt-0.5" />}
+              {category === 'Waterproofing & Restoration' && <ShieldCheck className="w-3.5 h-3.5 inline mr-1.5 -mt-0.5" />}
+              {category === 'Roofing' && <FolderGit2 className="w-3.5 h-3.5 inline mr-1.5 -mt-0.5" />}
+              {category === 'Painting & Restoration' && <Layers className="w-3.5 h-3.5 inline mr-1.5 -mt-0.5" />}
               {category}
             </button>
           ))}
@@ -142,7 +174,7 @@ export default function PortfolioPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
                   {/* Category Pill Tag Overlay */}
-                  <div className="absolute top-4 left-4 px-2.5 py-1 bg-slate-950/90 border border-slate-800 rounded-lg text-[10px] font-bold text-amber-500 uppercase tracking-widest font-mono">
+                  <div className="absolute top-4 left-4 px-2.5 py-1 bg-slate-950/90 border border-slate-800 rounded-lg text-[10px] font-bold text-amber-500 uppercase tracking-widest font-mono shadow-md">
                     {item.category}
                   </div>
                 </div>
