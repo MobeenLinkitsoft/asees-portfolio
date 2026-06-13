@@ -25,38 +25,62 @@ export default function HomePage() {
   const carouselImages = [
     {
       src: "/showcase/brick2.jpeg",
-      title: "Precision Brick Parapet Wall",
-      category: "Masonry Restoration",
+      // title: "Precision Brick Parapet Wall",
+      // category: "Masonry Restoration",
+    },
+    {
+      src: "/showcase/fratwork1.jpeg",
+    },
+    {
+      src: "/showcase/fratwork2.jpeg",
+    },
+    {
+      src: "/showcase/fratwork3.jpeg",
     },
     {
       src: "/showcase/floor1.jpeg",
-      title: "Flawless Sidewalk Finish & Expansion Joints",
-      category: "Concrete Work",
+      // title: "Flawless Sidewalk Finish & Expansion Joints",
+      // category: "Concrete Work",
     },
     {
       src: "/showcase/floor2.jpeg",
-      title: "On-Site Quality Inspection & Safety Compliance",
-      category: "Project Management",
+      // title: "On-Site Quality Inspection & Safety Compliance",
+      // category: "Project Management",
+    },
+    {
+      src: "/showcase/fratwork4.jpeg",
     },
     {
       src: "/showcase/floor3.jpeg",
-      title: "Premium Finished Backyard Concrete Patio",
-      category: "Concrete Work",
+      // title: "Premium Finished Backyard Concrete Patio",
+      // category: "Concrete Work",
     },
     {
       src: "/showcase/brick5.jpeg",
-      title: "Commercial Grade Driveway Under Construction",
-      category: "Concrete Work",
+      // title: "Commercial Grade Driveway Under Construction",
+      // category: "Concrete Work",
+    },
+    {
+      src: "/showcase/fratwork5.jpeg",
+    },
+    {
+      src: "/showcase/waterproofbefore.jpeg",
+    },
+    {
+      src: "/showcase/waterproofafter.jpeg",
     },
     {
       src: "/showcase/brick3.jpeg",
-      title: "Structural Parapet Boundary Alignment",
-      category: "Masonry",
+      // title: "Structural Parapet Boundary Alignment",
+      // category: "Masonry",
     },
     {
       src: "/showcase/brick4.jpeg",
-      title: "Active Scaffolding Masonry Operations",
-      category: "Structural Repairs",
+      // title: "Active Scaffolding Masonry Operations",
+      // category: "Structural Repairs",
+    },
+    {
+      src: "/showcase/fratwork.jpeg",
     },
   ];
 
@@ -89,7 +113,7 @@ export default function HomePage() {
   ];
 
   // Core Service Breakdowns
- const servicesList = [
+  const servicesList = [
     {
       title: "Parapet Walls & Lintels",
       desc: "Complete rebuilds, brick tie reinforcement, and concrete structure adjustments.",
@@ -282,14 +306,14 @@ export default function HomePage() {
           <div className="relative h-[32rem] sm:h-[40rem] w-full rounded-3xl overflow-hidden shadow-2xl border border-slate-800 bg-slate-900">
             <Image
               src={carouselImages[currentIndex].src}
-              alt={carouselImages[currentIndex].title}
+              alt={"Frat Work"}
               fill
               className="object-cover object-center transition-all duration-500 scale-100"
               sizes="(max-w-1200px) 100vw, 1200px"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-90" />
 
-            <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10 space-y-2">
+            {/* <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10 space-y-2">
               <span className="inline-block px-3 py-1 bg-amber-500 text-slate-950 text-xs font-bold uppercase tracking-widest rounded-md">
                 {carouselImages[currentIndex].category}
               </span>
@@ -300,7 +324,7 @@ export default function HomePage() {
                 Site Verification Identifier:{" "}
                 {carouselImages[currentIndex].src.replace("/showcase/", "")}
               </p>
-            </div>
+            </div> */}
           </div>
 
           <button

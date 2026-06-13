@@ -61,7 +61,7 @@ export default function Footer() {
             Proudly delivering premium residential and commercial construction services across:
           </p>
           <div className="flex flex-wrap gap-2">
-            {["Queens", "Brooklyn", "Manhattan", "Bronx", "Long Island"].map((loc) => (
+            {["Queens", "Brooklyn", "Manhattan", "Bronx", "Long Island",'Staten Island','Connecticut','New Jersey'].map((loc) => (
               <span 
                 key={loc} 
                 className="bg-whitetext-white border border-white/60 rounded-full px-3.5 py-1 text-xs font-semibold tracking-wide"
