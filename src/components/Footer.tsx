@@ -32,6 +32,48 @@ export default function Footer() {
           <p className="leading-relaxed text-white text-sm max-w-sm mt-2">
             Premium masonry and roofing solutions across Queens and the greater New York area. Built on structural safety, integrity, and elite commercial craftsmanship.
           </p>
+
+          {/* Social Media Links Block - Using High-Quality Inline SVGs */}
+          <div className="flex items-center gap-4 pt-2">
+            {/* Instagram Link with Custom SVG */}
+            <a 
+              href="https://www.instagram.com/aseesgeneralconstruction.c?utm_source=qr" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-2.5 bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 hover:text-amber-500 hover:border-amber-500/30 hover:bg-amber-500/5 transition-all duration-300 flex items-center justify-center"
+              aria-label="Follow ASEES Construction on Instagram"
+            >
+              <svg 
+                className="w-5 h-5 fill-none stroke-current" 
+                strokeWidth="2"
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+                viewBox="0 0 24 24" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+
+            {/* TikTok Link with Custom SVG */}
+            <a 
+              href="https://www.tiktok.com/@aseesgeneralconstruction?_r=1&_t=ZP-97BoTdrvQz9" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-2.5 bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 hover:text-amber-500 hover:border-amber-500/30 hover:bg-amber-500/5 transition-all duration-300 flex items-center justify-center"
+              aria-label="Follow ASEES Construction on TikTok"
+            >
+              <svg 
+                className="w-5 h-5 fill-current" 
+                viewBox="0 0 24 24" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.63 4.15 1.25 1.26 2.97 1.91 4.73 2v3.77a8.917 8.917 0 0 1-5.11-1.68c-.02 3.45-.02 6.89-.04 10.34a7.13 7.13 0 0 1-2.92 5.17A7.26 7.26 0 0 1 5.3 21.05a7.355 7.355 0 0 1-3.6-7.89 7.24 7.24 0 0 1 5.56-5.46c.02 1.23.01 2.47.02 3.7a3.473 3.473 0 0 0-2.3 3.4 3.511 3.511 0 0 0 3.73 3.47c1.78.07 3.41-1.21 3.65-2.98.08-1.57.04-3.14.05-4.71V.02z" />
+              </svg>
+            </a>
+          </div>
         </div>
 
         {/* Quick Links Column with matching interactive line transformations */}
@@ -64,7 +106,7 @@ export default function Footer() {
             {["Queens", "Brooklyn", "Manhattan", "Bronx", "Long Island",'Staten Island','Connecticut','New Jersey'].map((loc) => (
               <span 
                 key={loc} 
-                className="bg-whitetext-white border border-white/60 rounded-full px-3.5 py-1 text-xs font-semibold tracking-wide"
+                className="bg-black text-white border border-white/60 rounded-full px-3.5 py-1 text-xs font-semibold tracking-wide"
               >
                 {loc}
               </span>
